@@ -32,6 +32,7 @@
     "@types/csurf": "^1.11.3",
     "@types/passport-jwt": "^3.0.9",
     "bcrypt": "^5.1.1",
+    "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "cookie-parser": "^1.4.6",
     "csurf": "^1.11.0",

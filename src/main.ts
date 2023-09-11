@@ -1,8 +1,19 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { ValidationPipe } from '@nestjs/common';
+('@nestjs/common');
+import { Request } from 'express';
+import * as cookieParser from 'cookie-parser';
+import * as csurf from 'csurf';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true })); //class-validatorを使えるようにする
+  app.enableCors({
+    credentials: true,
+    origin: ['http://localhost:3000'],
+  });
+  app.use(cookieParser());
   await app.listen(3005);
 }
 bootstrap();
