@@ -19,6 +19,7 @@ async function bootstrap() {
         httpOnly: true,
         sameSite: 'none',
         secure: true,
+        path: '/',
       },
       value: (req: Request) => {
         return req.header('csrf-token');
